@@ -22,7 +22,6 @@ def completions_with_backoff(**kwargs):
         results = {'choices' : []}
         for _ in range(kwargs.get('n')):
             result = ollama.chat(messages=kwargs.get('messages'), model=kwargs.get('model'))
-            print(result)
             results['choices'].append(result)
         return results
     else:
