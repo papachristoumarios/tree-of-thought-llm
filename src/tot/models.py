@@ -18,7 +18,7 @@ if api_base != "":
 
 @backoff.on_exception(backoff.expo, openai.error.OpenAIError)
 def completions_with_backoff(**kwargs):
-    if kwargs.get('model').startswith('llama'):
+    if kwargs.get('model').startswith('llama') or kwargs.get('model').startswith('mistral'):
         results = {'choices' : []}
         for _ in range(kwargs.get('n')):
             result = ollama.chat(messages=kwargs.get('messages'), model=kwargs.get('model'))

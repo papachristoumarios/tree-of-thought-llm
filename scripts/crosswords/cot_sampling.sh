@@ -1,4 +1,5 @@
 python run.py \
+    --backend llama3 \
     --task crosswords \
     --task_start_index 0 \
     --task_end_index 20 \
